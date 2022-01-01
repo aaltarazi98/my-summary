@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import  {useState, useEffect}  from 'react';
+import CssBaseline from '@mui/material/CssBaseline'
+import theme from './theme'
+import { ThemeProvider } from '@emotion/react';
+import SetUp from './SetUp'
+import Interface from './Interface'
+import {Route, Routes, useNavigate} from 'react-router-dom'
 
 function App() {
+  const [setUp] = useState(JSON.parse(localStorage.getItem('setUp') || 'false'))
+  const navigate: Function = useNavigate()
+
+  useEffect(()=>{
+    if (setUp){
+      navigate('/Interface')
+    }else{
+      navigate('/SetUp')
+    }
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme = {theme}>
+      <CssBaseline enableColorScheme/>
+      <Routes>
+        <Route path="/Interface/*" element={<Interface/>}/>
+        <Route path="/SetUp/*" element={<div className="setUp"><SetUp/></div>}/>
+      </Routes>
+    </ThemeProvider>
   );
 }
 
