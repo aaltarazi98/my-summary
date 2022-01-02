@@ -30,7 +30,7 @@ export default function Interface() {
         }, 1000)
         setTimeout(()=>{
             setGreeting(false)
-        },5000)
+        },3500)
     }, [])
     
     const hrs: number = time.getHours()
@@ -41,9 +41,9 @@ export default function Interface() {
             <>
                 {greeting?
                     <div className="intro">
-                        <p style = {{fontSize: '11vh', margin: "0"}}>{ hrs > 13 ? hrs - 12 : hrs === 0 ? 12 : hrs }:{mins < 10 ? '0' + mins : mins} { hrs >= 12 ? 'pm' : 'am'}</p>
-                        <p style ={{fontSize: '6vh', margin: "0"}}>{ hrs > 17 ? 'Good evening' : hrs > 14 ? 'Good afternoon' : hrs > 10 ? 'Good day' : hrs > 4 ? 'Good morning' : 'Hello' }, {name}</p>
-                        <p style = {{fontSize: '4vh', margin: '0'}}>Welcome to My Summary</p>
+                        <p  className='tooltip' style = {{fontSize: '11vh', margin: "0"}}>{ hrs > 13 ? hrs - 12 : hrs === 0 ? 12 : hrs }:{mins < 10 ? '0' + mins : mins} { hrs >= 12 ? 'pm' : 'am'}</p>
+                        <p  className='tooltip' style ={{fontSize: '5vh', margin: "0"}}>{ hrs > 17 ? 'Good evening' : hrs > 14 ? 'Good afternoon' : hrs > 10 ? 'Good day' : hrs > 4 ? 'Good morning' : 'Hello' }, {name}</p>
+                        <p  className='tooltip' style = {{fontSize: '4vh', margin: '0'}}>Welcome to My Summary</p>
                     </div>
                     :
                     null

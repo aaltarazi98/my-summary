@@ -1,4 +1,5 @@
 import  {useState, useEffect} from 'react'
+const API_KEY: string = process.env.REACT_APP_WEATHER_KEY!
 
 export function WeatherTablet() {
     const homeZip: string | null = JSON.parse(localStorage.getItem('home') || '{}').zipcode
@@ -18,10 +19,11 @@ export function WeatherTablet() {
 
 
     async function fetchData(){
-        const weatherRes = await fetch('https://api.openweathermap.org/data/2.5/weather?zip='+ homeZip + '&appid=081d7ce868e31cc11d40458c3ae5b77d&units=imperial')
+        const weatherRes = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${homeZip}&appid=${API_KEY}&units=imperial`)
         const weatherData = await weatherRes.json()
         if (await weatherData.cod != '200'){
             setError(true)
+            console.log(weatherData)
             return
         }
         setWeather(weatherData)
@@ -52,10 +54,10 @@ export function WeatherTablet() {
                 <div className = "weather">
                     {homeZip?
                         <>
-                            <div style={{fontSize: "3em", marginTop: "10%"}}>{weather.name}</div>
-                            <div><img width="20%" src={`http://openweathermap.org/img/wn/${icon}@2x.png`}></img></div>
-                            <div style={{fontSize: "2em"}}>{parseInt(weather.main?.temp)}&#176;</div>
-                            <div style={{fontSize: "1.25em"}}>{weather.weather[0]?.description}</div>
+                            <h1 style={{marginTop: '1em', fontWeight: 'normal'}}>{weather.name}</h1>
+                            <img width="20%" src={`http://openweathermap.org/img/wn/${icon}@2x.png`}></img>
+                            <h3 style={{margin: '0', fontWeight: 'normal'}}>{parseInt(weather.main?.temp)}&#176;</h3>
+                            <h3 style={{margin: '0', fontWeight: 'normal'}}>{weather.weather[0]?.description}</h3>
                         </>
                         :
                         <div className="loader">

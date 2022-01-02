@@ -33,32 +33,34 @@ export function Work() {
         localStorage.setItem('setUp', 'true')
     }
     return (
-        <div>
-            <h2>This section will help display information about local weather and your commute</h2>
+        <div className='flexCol'>
+            <h2>Weather & Maps</h2>
             <h3>What is your work address?</h3>
-            <FormControl style={{width: '50%'}} sx={{mb: 2}} size='small'>
+            <FormControl style={{width: '90%'}} sx={{mb: 2}} size='small'>
                 <InputLabel htmlFor="address">Address Line</InputLabel>
                 <Input id="address" value={address} onChange = {(e: any) => setAddress(e.target.value)}/>
             </FormControl><br/>
-            <FormControl  style={{width: '50%'}} sx={{mb: 2}} size='small'>
+            <FormControl  style={{width: '90%'}} sx={{mb: 2}} size='small'>
                 <InputLabel htmlFor="city">City</InputLabel>
                 <Input id="city" value={city} onChange = {(e: any) => setCity(e.target.value)}/>
             </FormControl><br/>
-            <FormControl style={{width: '50%'}} sx={{mb: 2}} size='small'>
+            <FormControl style={{width: '90%'}} sx={{mb: 2}} size='small'>
                 <InputLabel htmlFor="state">State/Province</InputLabel>
                 <Input id="state" value={state} onChange = {(e: any) => setState(e.target.value)}/>
             </FormControl><br/>
-            <FormControl style={{width: '50%'}} sx={{mb: 2}} size='small'>
+            <FormControl style={{width: '90%'}} sx={{mb: 2}} size='small'>
                 <InputLabel htmlFor="zipcode">Zip Code</InputLabel>
                 <Input id="zipcode" value={zipcode} onChange = {(e: any) => setZipcode(e.target.value)}/>
             </FormControl><br/>
-            <FormControl style={{width: '50%'}} sx={{mb: 2}} size='small'>
+            <FormControl style={{width: '90%'}} sx={{mb: 2}} size='small'>
                 <InputLabel htmlFor="country">Country</InputLabel>
                 <Input id="country" value={country} onChange = {(e: any) => setCountry(e.target.value)}/>
             </FormControl>
             <br/>
-            <Button component={Link} to="/SetUp/Home" variant="text" color="secondary" size="large" startIcon={<ArrowBackIosNewIcon/>} sx={{mr: 6}}>Back</Button>
-            <Button component={Link} to="/SetUp/Complete" variant="text" color="secondary" size="large" endIcon={<ArrowForwardIosIcon/>} onClick={handleClick}>Next</Button>
+            <div className = "flexRow">
+                <Button component={Link} to="/SetUp/Home" variant="text" color="secondary" size="large" startIcon={<ArrowBackIosNewIcon/>} sx={{mr: 6}}>Back</Button>
+                <Button component={Link} to="/SetUp/Complete" variant="text" color="secondary" size="large" endIcon={<ArrowForwardIosIcon/>} onClick={handleClick}>Next</Button>
+            </div>
         </div>
     )
 }

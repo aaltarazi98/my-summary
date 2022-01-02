@@ -4,7 +4,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const finnhub = require('finnhub')
 const api_key = finnhub.ApiClient.instance.authentications['api_key'];
-api_key.apiKey = "c6qjubaad3i891nj55a0"
+api_key.apiKey = process.env.REACT_APP_STOCKS_KEY
 const finnhubClient = new finnhub.DefaultApi()
 
 interface Quote{

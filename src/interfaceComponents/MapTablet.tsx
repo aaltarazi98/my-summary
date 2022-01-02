@@ -1,4 +1,5 @@
 import Iframe from 'react-iframe';
+const API_KEY:string = process.env.REACT_APP_MAPS_KEY!
 
 export function MapTablet() {
     interface Location{
@@ -17,7 +18,7 @@ export function MapTablet() {
         return(
             <div className = "map">
                 <h2 style={{textAlign: "center", marginBottom: "2vh", lineHeight: "1vh", marginTop:"3vh"}}>Map</h2>
-                <Iframe url ={`https://www.google.com/maps/embed/v1/directions?key=AIzaSyCr-dJeM_y9G6A-IzOdbAAEuAPizoVbffI&origin=${homeAdd}&destination=${workAdd}&avoid=tolls`}
+                <Iframe url ={`https://www.google.com/maps/embed/v1/directions?key=${API_KEY}&origin=${homeAdd}&destination=${workAdd}&avoid=tolls`}
                 className="mapDisplay"
                 />
             </div>

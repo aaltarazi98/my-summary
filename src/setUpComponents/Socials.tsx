@@ -9,17 +9,16 @@ import {Reddit} from './socialsComponents/Reddit'
 import {Finished} from './socialsComponents/Finished'
 
 export function Socials() {
-    const [twitterChecked, setTwitterChecked] = useState(false)
-    const [igChecked, setIgChecked] = useState(false)
-    const [redditChecked, setRedditChecked] = useState(false)
 
     return (
         <Routes>
-            <Route path="/" element={<div>
-                <h2>Let's set up your socials & news tablet</h2>
-                <h3 style={{inlineSize: '40vw', overflowWrap: 'break-word'}}>This section will display your favorite media sources and news about topics you are interested in, allowing you to toggle between the various outlets.</h3>
-                <Button component={Link} to="/Setup/Name" variant="text" color="secondary" size="large" startIcon={<ArrowBackIosNewIcon/>} sx={{mr: 6}}>Back</Button>
-                <Button component={Link} to="twitter" variant="text" color="secondary" size="large" endIcon={<ArrowForwardIosIcon/>}>Next</Button>
+            <Route path="/" element={<div className='flexCol'>
+                <h2 className='tooltip'>Set up your socials & news tablet</h2>
+                <h3 className='tooltip'>This displays your favorite media sources and news about topics you are interested in</h3>
+                <div className = "flexRow">
+                    <Button component={Link} to="/Setup/Name" variant="text" color="secondary" size="large" startIcon={<ArrowBackIosNewIcon/>} sx={{mr: 6}}>Back</Button>
+                    <Button component={Link} to="twitter" variant="text" color="secondary" size="large" endIcon={<ArrowForwardIosIcon/>}>Next</Button>
+                </div>
             </div>}/>
             <Route path="twitter" element={<Twitter/>}/>
             <Route path="news" element={<News/>}/>

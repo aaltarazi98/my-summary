@@ -24,6 +24,39 @@ h3{
   font-size: 2.25vh;
 }
 
+h4{
+  font-size: 1.9vh;
+}
+
+.tooltip{
+  inline-size: 40vw;
+  overflow-wrap: break-word;
+}
+
+.flexCol{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexRow{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.showItems{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 60%;
+  margin-bottom: 1em;
+}
+
 .setUp{
   height: 100%;
   width: 100%;
@@ -39,11 +72,11 @@ h3{
 }
 
 .intro{
-  animation: fadeOut ease 5s;
-  -webkit-animation: fadeOut ease 5s;
-  -moz-animation: fadeOut ease 5s;
-  -o-animation: fadeOut ease 5s;
-  -ms-animation: fadeOut ease 5s;
+  animation: fadeOut ease 3.5s;
+  -webkit-animation: fadeOut ease 3.5s;
+  -moz-animation: fadeOut ease 3.5s;
+  -o-animation: fadeOut ease 3.5s;
+  -ms-animation: fadeOut ease 3.5s;
   height: 100%;
   width: 100%;
   text-align: center;
@@ -90,6 +123,7 @@ h3{
   order: 1;
   border-radius: 0.5em;
   background-color: #191937 ;
+  overflow: hidden;
 }
 
 .map{
@@ -143,7 +177,6 @@ h3{
   width: 31%;
   margin-top: 3vh;
   margin-left: 1vw;
-  /* background-color: #191937; */
   height: 84vh;
 }
 
@@ -174,6 +207,10 @@ h3{
   padding-top: 0.7em;
 }
 
+.redditPost:hover{
+  background-color: #222249;
+}
+
 .newsTablet{
   width: 100%;
   height: inherit;
@@ -190,6 +227,10 @@ h3{
   padding-top: 0.7em;
 }
 
+.article:hover{
+  background-color: #222249;
+}
+
 .ticker{
   margin-bottom: 0.7em;
   margin-right: 0.7em;
@@ -198,6 +239,10 @@ h3{
   background-color: #191937;
   border-radius: 0.5em;
   justify-content: space-between;
+}
+
+.ticker:hover{
+  background-color: #222249;
 }
 
 @keyframes fadeOut {
@@ -257,5 +302,54 @@ h3{
   }
   100% {
     opacity:0;
+  }
+}
+
+@media (max-width: 480px){
+  h1{
+    font-size: 4vh;
+  }
+  
+  h2{
+    font-size: 3vh ;
+  }
+  
+  h3{
+    font-size: 2vh;
+  }
+
+  h4{
+    font-size: 2vh;
+  }
+
+  p{
+    font-size: 1.5vh;
+  }
+
+  .showItems{
+    width: 100%;
+  }
+
+  .interface-container{
+    flex-direction: column;
+  }
+
+  .left-container{
+    width: 95%;
+    margin-left: 2vw;
+  }
+
+  .socials{
+    width: 95%;
+    margin-left: 2.5vw;
+  }
+
+  .tickersTablet{
+    width: 95%;
+    margin-left: 3vw;
+  }
+
+  .tooltip{
+    inline-size: 90vw;
   }
 }

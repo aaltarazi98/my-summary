@@ -26,7 +26,7 @@ export default function SetUp() {
                 <Route path ="Work" element={<Work/>}/>
                 <Route path ="Complete" element={<Complete/>}/>
             </Routes>
-            {setUp? <Button component={Link} to="/Interface" variant="contained" color="secondary" size="large" sx={{my: 2}}>Return to Interface</Button> : null}
+            {setUp? <Button component={Link} to="/Interface"  color="secondary" size="large" sx={{my: 2}}>Return to Interface</Button> : null}
         </>
     )
 }
