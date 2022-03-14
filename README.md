@@ -6,7 +6,7 @@ My Summary serves as a single page application that displays a summary of news, 
 
 Begin your experience by visiting the link below and setting up your account. You can then enjoy content tailored for you served seemlessly to your front page. You can always change your interests by accessing the gear on the top right. Please note that all data is stored locally, opening a new browser or clearing your cache will require setting up again.
 
-Begin your My Summary experience by visiting the site at: https://aaltarazi98.github.io/my-summary/
+Begin your My Summary experience by visiting the site at: https://my-summary-tab.netlify.app/
 
 ## About
 
